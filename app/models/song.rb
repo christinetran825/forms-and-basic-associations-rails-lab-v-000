@@ -27,10 +27,9 @@ class Song < ActiveRecord::Base
     end
   end
 
-  def genre_ids=(ids)
-    ids.each do |id|
-      genre = Genre.find(id)
-      sel.genres << genre
+  def note_contents
+    self.notes.each do |note|
+      note.content
     end
   end
 
