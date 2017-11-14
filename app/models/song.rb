@@ -21,4 +21,5 @@ class Song < ActiveRecord::Base
       sel.genres << genre
     end
   end
+  
 end
