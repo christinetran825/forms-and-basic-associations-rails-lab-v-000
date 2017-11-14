@@ -50,4 +50,3 @@ class SongsController < ApplicationController
     params.require(:song).permit(:genre_name, :title)
   end
 end
-
