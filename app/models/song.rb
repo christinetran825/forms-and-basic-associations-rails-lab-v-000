@@ -20,7 +20,11 @@ class Song < ActiveRecord::Base
   end
 
   def note_contents=(notes)
-    self.note = Note.find_or_create_by(name: content)
+    notes.each do |content|
+      if content.strip != ""
+        self.notes.build(content: content)
+      end
+    end
   end
 
   def genre_ids=(ids)
