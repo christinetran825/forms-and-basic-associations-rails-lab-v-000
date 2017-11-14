@@ -11,6 +11,10 @@ class Song < ActiveRecord::Base
     self.artist = Artist.find_or_create_by(name: name)
   end
 
+  def artist_name
+    self.artist.name
+  end
+
   def note_contents=(content)
     self.note = Note.find_or_create_by(name: content)
   end
@@ -21,5 +25,5 @@ class Song < ActiveRecord::Base
       sel.genres << genre
     end
   end
-  
+
 end
